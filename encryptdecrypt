@@ -1,0 +1,42 @@
+#!/usr/bin/python3
+#encryptdecrypt
+
+#Takes the input_text and encrypts it, returning the result
+
+def encryptText(input_text,key):
+	input_text=input.text.upper()
+	result = ''
+	for letter in input_text:
+		#Ascii Upercase 65-90 Lowercase 97-122 (full range 32-126)
+		ascii_value = ord(letter)
+		#Execute non-characters from enyccrption
+		if (ord('A') > ascii_value) or (ascii_value > ord('Z'):
+			result+=letter
+		else:
+			#applay encrytion key
+			key_val = ascii_value+key
+			#Ensure we just use A-Z regardless of key
+			if not((ord('A)) < key_val < ord('Z)):
+				key_val = ord('A')+(key_val-ord('A'))%(ord('Z')-ord('A')+1)
+			#Add the encoded letter to rhe result
+			result+=str(chr(key_val))
+	return result
+	
+#Test Function
+
+def main():
+	print("Please enter text to scramble:")
+	#Get user input
+	try:
+		user_input = input()
+		scrambled_result=encryptText(userinput,10)
+		print("result :+ scrambled_result)
+		print("To  un-scramble, press enter again")
+		input()
+		unscrambled_result=encryptText(scrambled_result,-10)
+		print("Result: "+unscrambled_result)
+	except:
+		print("Sorry: Only Ascii charachters are supported")
+
+main()
+#End
