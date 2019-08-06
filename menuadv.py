@@ -19,8 +19,8 @@ for files in os.listdir(SCRIPT_DIR):
 
 running = True
 while (running):
-    print("Enter script number to run: 1-%d (x to exit"%len(scripts))
-    run_item = raw_input()
+    print("Enter script number to run: 1-%d (x to exit)"%len(scripts))
+    run_item = input()
     try:
         run_number = int(run_item)
         if len(scripts) >= run_number >0:
